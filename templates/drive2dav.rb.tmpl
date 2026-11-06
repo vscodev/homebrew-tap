@@ -1,0 +1,41 @@
+class Drive2dav < Formula
+  desc "A lightweight WebDAV server that supports multiple storages"
+  homepage "https://github.com/vscodev/drive2dav"
+  version "{{.Version}}"
+
+  if OS.mac?
+    if Hardware::CPU.arm? || Hardware::CPU.in_rosetta2?
+      url "{{.DownloadUrlMacOSArm64}}"
+      sha256 "{{.Sha256MacOSArm64}}"
+    else
+      url "{{.DownloadUrlMacOSAmd64}}"
+      sha256 "{{.Sha256MacOSAmd64}}"
+    end
+  elsif OS.linux?
+    if Hardware::CPU.arm?
+      url "{{.DownloadUrlLinuxArm64}}"
+      sha256 "{{.Sha256LinuxArm64}}"
+    else
+      url "{{.DownloadUrlLinuxAmd64}}"
+      sha256 "{{.Sha256LinuxAmd64}}"
+    end
+  else
+    odie "Unsupported platform. Please submit a bug report here: https://github.com/vscodev/drive2dav/issues\n#{OS.report}"
+  end
+
+  def install
+    bin.install "drive2dav"
+    generate_completions_from_executable(bin/"drive2dav", "completion")
+  end
+
+  service do
+    run [bin/"drive2dav", "serve"]
+    keep_alive crashed: true
+    log_path var/"log/drive2dav.log"
+    error_log_path var/"log/drive2dav.log"
+  end
+
+  test do
+    assert_match "drive2dav version #{version}", shell_output("#{bin}/drive2dav -v")
+  end
+end
