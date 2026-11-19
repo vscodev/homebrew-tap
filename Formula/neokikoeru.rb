@@ -1,23 +1,23 @@
 class Neokikoeru < Formula
   desc "High-performance streaming media server for DLsite voice works"
   homepage "https://github.com/vscodev/neokikoeru"
-  version "3.32.5"
+  version "3.33.0"
 
   if OS.mac?
     if Hardware::CPU.arm? || Hardware::CPU.in_rosetta2?
-      url "https://github.com/vscodev/neokikoeru/releases/download/v3.32.5/neokikoeru-macos-arm64.tar.gz"
-      sha256 "a1046d83690700419e041c1730c904720506a7e95d42d6dda99e31db0c366842"
+      url "https://github.com/vscodev/neokikoeru/releases/download/v3.33.0/neokikoeru-macos-arm64.tar.gz"
+      sha256 "079369bf139dc0a568eb011b6f12b3a11af3965c16eccabffbcedfcf91de00ac"
     else
-      url "https://github.com/vscodev/neokikoeru/releases/download/v3.32.5/neokikoeru-macos-amd64.tar.gz"
-      sha256 "f6da2a8dd9b2bac52f387027752aecea050ff788dc5955fe1c87f2714989c29c"
+      url "https://github.com/vscodev/neokikoeru/releases/download/v3.33.0/neokikoeru-macos-amd64.tar.gz"
+      sha256 "26640b21cea18bcc445ad36e0f594c1d46a8b1c61546e8e5b9987a296f48459e"
     end
   elsif OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/vscodev/neokikoeru/releases/download/v3.32.5/neokikoeru-linux-arm64.tar.gz"
-      sha256 "e52afb3de3818b0bae1a509573d21fadb88f01a4cef636aa068cdecfdc4a3952"
+      url "https://github.com/vscodev/neokikoeru/releases/download/v3.33.0/neokikoeru-linux-arm64.tar.gz"
+      sha256 "5d3923af91ba98e8d1a9f3ee42d9f76033765cde6c603db66dd2fd861185eae7"
     else
-      url "https://github.com/vscodev/neokikoeru/releases/download/v3.32.5/neokikoeru-linux-amd64.tar.gz"
-      sha256 "db898fb598fcbf441f1773dd073972def2609021bd4150e533b58039dcc5f215"
+      url "https://github.com/vscodev/neokikoeru/releases/download/v3.33.0/neokikoeru-linux-amd64.tar.gz"
+      sha256 "aec8f81fad7ca74351085792dee217ffe283e51254ce353627a36acbbe9da28f"
     end
   else
     odie "Unsupported platform. Please submit a bug report here: https://github.com/vscodev/neokikoeru/issues\n#{OS.report}"
