@@ -1,23 +1,23 @@
 class Drive2dav < Formula
   desc "A lightweight WebDAV server that supports multiple storages"
   homepage "https://github.com/vscodev/drive2dav"
-  version "0.3.2"
+  version "0.4.0"
 
   if OS.mac?
     if Hardware::CPU.arm? || Hardware::CPU.in_rosetta2?
-      url "https://github.com/vscodev/drive2dav/releases/download/v0.3.2/drive2dav-macos-arm64.tar.gz"
-      sha256 "01043435fb9be763ffedbfffbe4161b78522a7f500a14ed62f53c072cd1c9878"
+      url "https://github.com/vscodev/drive2dav/releases/download/v0.4.0/drive2dav-macos-arm64.tar.gz"
+      sha256 "51122f199f435fb42b941befe1736c4e9cbe8e41bdfa232266aa641da4e3b54a"
     else
-      url "https://github.com/vscodev/drive2dav/releases/download/v0.3.2/drive2dav-macos-amd64.tar.gz"
-      sha256 "886c058295192378da28429a85f7ffd3069244dfe63e417c3d8cfa80f66c3176"
+      url "https://github.com/vscodev/drive2dav/releases/download/v0.4.0/drive2dav-macos-amd64.tar.gz"
+      sha256 "c66a71647706e94c946ac19f0dfaf230c92bae1f07fd498437e93f1cd07f77a9"
     end
   elsif OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/vscodev/drive2dav/releases/download/v0.3.2/drive2dav-linux-arm64.tar.gz"
-      sha256 "0380b2207e770fd309b83acccbe8f46dec49c955fee741f79caa455e72f635f8"
+      url "https://github.com/vscodev/drive2dav/releases/download/v0.4.0/drive2dav-linux-arm64.tar.gz"
+      sha256 "1c74c21a1ec804cfb821f775555a7bfcc335f2c9b8fdf4d1ac9e7956c66415aa"
     else
-      url "https://github.com/vscodev/drive2dav/releases/download/v0.3.2/drive2dav-linux-amd64.tar.gz"
-      sha256 "eae84cc6a2eca57bf065ee3e8b6fba988e07b7312329866b19a907cffc7a0f83"
+      url "https://github.com/vscodev/drive2dav/releases/download/v0.4.0/drive2dav-linux-amd64.tar.gz"
+      sha256 "e9b0bc90066995fcff14c3b5c4cc0a277bd9277028952e791640930802e47547"
     end
   else
     odie "Unsupported platform. Please submit a bug report here: https://github.com/vscodev/drive2dav/issues\n#{OS.report}"
